@@ -1,0 +1,15 @@
+ManifestFileVersion: 0
+UnityVersion: 6000.3.1f1
+CRC: 3891785731
+HashAppended: 0
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: unifiedraytracing
+      Dependencies: {}
+    Info_1:
+      Name: player
+      Dependencies: {}
+    Info_2:
+      Name: kushi
+      Dependencies: {}

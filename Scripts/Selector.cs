@@ -1,0 +1,29 @@
+﻿using System.Collections.Generic;
+
+public class Selector : Node
+{
+    public Selector() : base() { }
+    public Selector(List<Node> children) : base(children) { }
+
+    public override NodeState Evaluate()
+    {
+        foreach (Node node in children)
+        {
+            switch (node.Evaluate())
+            {
+                case NodeState.FAILURE:
+                    continue; // Nếu thất bại, thử node tiếp theo
+                case NodeState.SUCCESS:
+                    state = NodeState.SUCCESS;
+                    return state;
+                case NodeState.RUNNING:
+                    state = NodeState.RUNNING;
+                    return state;
+                default:
+                    continue;
+            }
+        }
+        state = NodeState.FAILURE;
+        return state;
+    }
+}
